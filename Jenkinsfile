@@ -23,6 +23,16 @@ pipeline {
                 archive '/home/ubuntu/dotnetcore-docs-hello-world/bin/Debug/net6.0/publish/'
             }
         }
+        stage('downloade zip') {
+            steps {
+                sh 'sudo apt install zip -y'
+            }
+        }
+        stage('zip') {
+            steps {
+                sh 'zip -r  dotnetcore-docs-hello-world-1.0.0.zip /home/ubuntu/dotnetcore-docs-hello-world/bin/Debug/net6.0/publish'
+            }
+        }
     }
 
 }
