@@ -1,5 +1,5 @@
 pipeline {
-    agent  { label '.NET' }
+    agent  { label 'node-1' }
     stages {
         stage('git') {
             steps {
